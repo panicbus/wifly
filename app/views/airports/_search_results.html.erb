@@ -1,0 +1,7 @@
+ <h3>Search partial via the Airports controller</h3>
+
+ <ul>
+    <% @searched_airports.each do |airport| %>
+  <li><%= airport.city, :action => 'show', :id => airport.id  %></li>
+  <% end %>
+  </ul>

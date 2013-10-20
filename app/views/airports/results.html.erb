@@ -1,0 +1,11 @@
+<h2>This is the search results page using the search partial</h2>
+
+<% @searched_airports.each do |a| %>
+
+   <%= render "search_results", search_results: a %>
+
+  <% end %>
+
+<h3><%= link_to "Add an airport?", new_airport_path %></h3>
+
+
