@@ -1,19 +1,24 @@
 Wifly::Application.routes.draw do
   root to: "airports#welcome"
 
-  get "/airports" => "airports#index"
+  get "/airports/search" => "airports#search"
 
-  get "/airports/new" => "airports#new", as: "new_airport"
+  get '/not_found' => 'airports#not_found'
 
-  get "/airports/:id" => "airports#show", as: "airport"
+  resources :airports, except: [ :destroy, :index ]
 
-  get "/airports/:id/edit" => "airports#edit", as: "edit_airport"
+  # get "/airports" => "airports#index"
 
-  post "/airports" => "airports#create"
+  # get "/airports/new" => "airports#new", as: "new_airport"
 
-  put "/airports/:id" => "airports#update"
+  # get "/airports/:id" => "airports#show", as: "airport"
 
-  post "/airports/search" => "airports#search"
+  # get "/airports/:id/edit" => "airports#edit", as: "edit_airport"
+
+  # post "/airports" => "airports#create"
+
+  # put "/airports/:id" => "airports#update"
+
 
   post "/airports/results" => "airports#results"
 

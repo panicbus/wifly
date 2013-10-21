@@ -1,3 +1,6 @@
+# require 'nokogiri'
+# require 'open-uri'
+
 class AirportsController < ApplicationController
 
   def welcome
@@ -33,7 +36,11 @@ class AirportsController < ApplicationController
 
   def search
     @searched_airports = Airport.search(params[:search])
-    redirect_to airports_results_path
+
+    if @searched_airports.empty?
+      render :not_found
+    end
+
   end
 
 end

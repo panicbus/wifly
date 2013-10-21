@@ -1,7 +1,10 @@
 
-<h2>The welcome screen using the Airports controller</h2>
+<h1 id="title">WiFly</h1>
+<h2>Does your airport have available wifi?</h2>
+<h3>Search for your airport below and find out</h3>
 
 
 <div id="search">
     <%= render :partial => 'airports/search' %>
+    <p><%= link_to "Submit an airport", new_airport_path %></p>
   </div>

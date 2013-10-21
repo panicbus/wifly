@@ -16,8 +16,7 @@ ActiveRecord::Schema.define(:version => 20131019185752) do
   create_table "airports", :force => true do |t|
     t.string   "city"
     t.string   "country"
-    t.string   "airport_code"
-    t.string   "airport_name"
+    t.string   "code"
     t.text     "details"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false

@@ -1,4 +1,4 @@
-<h2>This is the search results page using the search partial</h2>
+<h2>This is the search results page</h2>
 
 <% @searched_airports.each do |a| %>
 
@@ -8,4 +8,5 @@
 
 <h3><%= link_to "Add an airport?", new_airport_path %></h3>
 
-
+<h4>Not what you're looking for?</h4>
+<h4><%= link_to "Search again", root_path %>.</h4>

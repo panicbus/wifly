@@ -2,6 +2,7 @@
 
  <ul>
     <% @searched_airports.each do |airport| %>
-  <li><%= airport.city, :action => 'show', :id => airport.id  %></li>
-  <% end %>
+      <li><%= link_to "#{airport.city} (#{airport.code})", airport %></li>
+
+    <% end %>
   </ul>
