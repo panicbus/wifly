@@ -7,8 +7,4 @@ class Airport < ActiveRecord::Base
      search_condition, search_condition, search_condition)
   end
 
-  # def
-
-  # end
-
 end

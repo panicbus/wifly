@@ -6,8 +6,11 @@ gem 'rails', '3.2.14'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'geocoder'
+gem 'json'
+gem 'typhoeus'
 
-# gem 'nokogiri', '~> 1.6.0'
+# gem 'nokogiri'
 
 # Gems used only for assets and not required
 # in production environments by default.
