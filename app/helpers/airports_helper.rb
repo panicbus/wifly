@@ -9,7 +9,7 @@ module AirportsHelper
     result_hash['objects'].each do |result|
         @lat = result['lat']
         @long = result['long']
-      end
+    end
       # makes new instance of Location object in db with these keys
     Location.create(longitude: @long, latitude: @lat, airport_id: airport.id)
   end
