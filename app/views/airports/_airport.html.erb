@@ -1,19 +1,18 @@
+ <!-- this is the details page - the end page with map & details  -->
   <div>
-    <h1><%= airport.city %></h1>
+    <h1><%= airport.city %>, <%= airport.country %></h3>
   </div>
 
   <div>
-    <p><%= airport.country %></p>
+    <h2>Airport code: <%= airport.code %></h2>
   </div>
 
-  <div>
-    <p><%= airport.code %></p>
+  <div id="main_details">
+    <p><%= safe_join(airport.details.split("\r\n"), "<br />".html_safe) %></p>
   </div>
 
-  <div>
-    <p><%= airport.details %></p>
-  </div>
+<h4>If these details aren't right, you can
+<%= link_to "edit this airport", edit_airport_path(airport) %>.</h4>
+<br>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=485x200&sensor=false&zoom=9&markers=#{@location.latitude}%2C#{@location.longitude}" %>
 
-
-<h3>If this doesn't look right, you can
-<%= link_to "edit this airport", edit_airport_path(airport) %>.</h3>

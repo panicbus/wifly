@@ -1,14 +1,11 @@
 <!-- This is the search results page -->
 
 <h2>These airports matched your search:</h2>
-<% @searched_airports.each do |a| %>
 
-   <%= render "search_results", search_results: a %>
-
-  <% end %>
+   <%= render "search_results" %>
 
 <h3>Airport you want not listed?</h3>
-<h3>Do your fellow man a solid and <%= link_to "add it", new_airport_path %>!</h3>
+<h3>Why not <%= link_to "add it", new_airport_path %>?</h3>
 
 <h4>Or else...</h4>
 <h4><%= link_to "Search again", root_path %></h4>

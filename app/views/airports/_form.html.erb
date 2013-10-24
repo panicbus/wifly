@@ -1,12 +1,13 @@
-<%= form_for @airport do |f| %>
-  Input city <br>
-  <%= f.text_field :city %> <br>
-    Input country<br>
-  <%= f.text_field :country %> <br>
-  Input three letter airport code <br>
-  <%= f.text_field :code %> <br>
-  Input details <br>
-  <%= f.text_area :details %> <br>
-  <%= f.submit %>
-  <% end %>
 
+    <%= form_for @airport do |f| %>
+    Input city <br>
+    <%= f.text_field :city, :placeholder => "City" %> <p>
+
+      Input country<br>
+    <%= f.text_field :country, :placeholder => "Country" %> <p>
+     Input three letter airport code<br>
+    <%= f.text_field :code, :placeholder => "3-letter code" %><a href="http://www.world-airport-codes.com/" target="_blank">  Find your code</a><p>
+    Input details <br>
+    <%= f.text_area :details, :placeholder => "Jot down the current airport wifi details", :cols => "80", :rows => "10"%><p>
+    <%= f.submit %>
+    <% end %>

@@ -1,7 +1,8 @@
 <!-- Search partial via the Airports controller -->
- <ul>
-    <% @searched_airports.each do |airport| %>
-      <li><%= link_to "#{airport.city} (#{airport.code})", airport %></li>
+<ul>
+  <% @searched_airports.each do |airport| %>
+    <li><%= link_to "#{airport.city} (#{airport.code})", airport %></li>
 
-    <% end %>
-  </ul>
+  <% end %>
+</ul>
+
