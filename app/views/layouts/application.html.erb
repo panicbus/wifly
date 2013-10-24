@@ -12,12 +12,12 @@
 </head>
 <body>
   <!-- <div id="map"> -->
-      <div id="main_container">
-        <div id="flash_notice"><%= flash[:notice] %></div>
+    <div id="main_container">
+      <div id="flash_notice"><%= flash[:notice] %></div>
         <%= yield %>
-
       </div>
-  </div>
+    </div>
+  <!-- <div> -->
     <script type="text/javascript">
       var map = L.map('map').setView([48.892, 2.40], 13);
 
@@ -33,9 +33,9 @@
       }).addTo(map);
 
       // Calculate the offset
-      var offset = map.getSize().x*0.14;
+      // var offset = map.getSize().x*0.14;
       // Then move the map
-      map.panBy(new L.Point(-offset, 300), {animate: false});
+      // map.panBy(new L.Point(-offset, 300), {animate: false});
 
 
       // var popup = L.popup()
@@ -44,8 +44,6 @@
       //   .openOn(map);
 
     </script>
-
-
 
 </body>
 </html>

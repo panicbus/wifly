@@ -5,8 +5,9 @@
  */
 
 #map {
-  height: 600px;
-  z-index: 2;
+  width: 400px;
+  height: 300px;
+  /*z-index: 2;*/
   position: relative;
 }
 
