@@ -1,8 +1,9 @@
-  <!-- <form role="form"> -->
-    <!-- <div class="form-group"> -->
-      <%= form_tag('/airports/search', method: :get) do %>
-         <%= text_field_tag :search, params[:search], :id => 'search_field' %>
-          <%= submit_tag "Search" %>
-      <% end %>
-    </div>
-  </form>
+<div class="form-inline">
+  <div>
+    <%= form_tag('/airports/search', method: :get) do %>
+      <div id="search_field"><%= text_field_tag :search, params[:search], :id => 'search_field', :placeholder => "Type a city, country or 3-letter airport code" %>
+      </div>
+    <div id="search_button"><%= submit_tag "Search" %></div>
+    <% end %>
+  </div>
+</div>

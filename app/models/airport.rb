@@ -4,6 +4,7 @@ class Airport < ActiveRecord::Base
   has_one :location
 
   validates :code, uniqueness: true
+  validates :code, presence: true
   validates :city, presence: true
   validates :country, presence: true
   validates :details, presence: true

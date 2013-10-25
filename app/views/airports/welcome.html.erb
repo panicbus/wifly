@@ -1,13 +1,17 @@
-
+<div class="header">
+<img src="http://www.clker.com/cliparts/3/1/e/f/12065581871657764779ispyisail_Wireless_WiFi_symbol.svg.hi.png" />
 <h1 id="title">WiFly</h1>
-<h2>Does your airport have available wifi?</h2>
-<h3>Search for your airport below and find out</h3>
+</div>
+<h3>Does your airport have available WiFi?</h3>
+<h4>Search below and find out</h4>
 
 <div id="search">
   <!-- brings in the search form -->
-    <%= render :partial => 'airports/search' %><br />
+    <%= render :partial => 'airports/search' %>
+      <h4>Been to an airport and know about its WiFi status?</h4>
+      <h4 id="submit_link"><%= link_to "Submit it!", new_airport_path %></h4>
+</div>
+<!-- <img src="http://www.clker.com/cliparts/b/7/e/b/13136993601995983935Airplane%20Silhouette.svg" width="100%"> -->
 
-    <p><%= link_to "Submit an airport", new_airport_path %></p>
 
-  </div>
 

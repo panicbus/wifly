@@ -11,25 +11,10 @@
     <p><%= safe_join(airport.details.split("\r\n"), "<br />".html_safe) %></p>
   </div>
 
-<h4>If these details aren't right, you can
+<h4 style="font-size: 23px">If these details aren't right, you can
 <%= link_to "edit this airport", edit_airport_path(airport) %>.</h4>
 <br>
 <div>
-<script type="text/javascript">
 
-      var map = L.map('map').setView([48.892, 2.40], 13);
-       <% if @lat.present? && @long.present? %>
-      var marker = L.marker([<%= @location.latitude %>, <%= @location.longitude %>]).addTo(map);
-
-      marker.openPopup('click').bindPopup("<b><%= @searched_airports %></b><br>").openPopup();
-      <% end %>
-
-      L.tileLayer('http://{s}.tile.cloudmade.  com/3f67482caa0a497e8193801abf8ed7cd/997/256/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-      maxZoom: 15, minZoom: 5
-      }).addTo(map);
-</script>
 </div>
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=485x200&sensor=false&zoom=9&markers=#{@location.latitude}%2C#{@location.longitude}" %>
-
-
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=545x200&sensor=false&zoom=9&markers=#{@location.latitude}%2C#{@location.longitude}" %>

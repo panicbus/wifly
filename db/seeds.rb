@@ -3,5 +3,7 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+  # cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+  # Mayor.create(name: 'Emanuel', city: cities.first)
+
+#airport = Airport.create([{:city => 'San Francisco'}, {:country => 'USA'}, {:code => 'SFO'}, {:details: 'San Francisco International Airport offers free Wi-Fi service in all terminals. \r\n\r\nTo connect to #SFO FREE WIFI\r\n - Select the Wi-Fi network named #SFO FREE WIFI\r\n - Launch a web browser\r\n - Click the button to accept the terms and conditions\r\n'}])
