@@ -1,13 +1,17 @@
- <!-- this is the details page - the end page with map & details  -->
+ <!-- this is the airport details page - the end page with map & details  -->
   <div>
+    <!-- delivers the city and country names -->
     <h1><%= airport.city %>, <%= airport.country %></h3>
   </div>
 
   <div>
+    <!-- delivers the code name -->
     <h2>Airport code: <%= airport.code %></h2>
   </div>
 
   <div id="main_details">
+    <!-- delivers the details -->
+    <!-- safe_join sets the regex "\r\n" to be a line break in the details -->
     <p><%= safe_join(airport.details.split("\r\n"), "<br />".html_safe) %></p>
   </div>
 

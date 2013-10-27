@@ -6,32 +6,32 @@ class AirportsController < ApplicationController
 
   end
 
+  # index currently isn't being used
   def index
     @airports = Airport.all
   end
 
   def new
     @airport = Airport.new
-
   end
 
   def create
     new_airport = Airport.create(params[:airport])
-      if new_airport.errors.empty?
-        create_location(params[:airport][:code])
-        redirect_to airport_path(new_airport.id)
+      if new_airport.errors.empty?  #if there are no errors in the form
+        create_location(params[:airport][:code])  #calls the create_location method in airport helper
+        redirect_to airport_path(new_airport.id) # redirects to show method
       else
-        flash[:notice] = new_airport.errors.full_messages
-        redirect_to new_airport_path
+        flash[:notice] = new_airport.errors.full_messages  #otherwise prints error msgs
+        redirect_to new_airport_path #redirects back to create
       end
   end
 
   def show
-    @airport = Airport.find(params[:id])
-    unless @airport.location
-      create_location(@airport.code)
+    @airport = Airport.find(params[:id])  #locates & sets the airport id w @airport
+    unless @airport.location   #if there is no location assc w/ @airport
+      create_location(@airport.code) #it creates one with its airport code
     end
-    @location = @airport.location
+    @location = @airport.location  #or else assigns it to @locations
   end
 
   def edit
@@ -47,22 +47,6 @@ class AirportsController < ApplicationController
   def search
     @searched_airports = Airport.search(params[:search])
   end
-
-      # query = params[:search].gsub(/\s/,'%20')
-      # result = Typhoeus.post("http://openflights.org/php/apsearch.php/search?city=#{query}&fmt=JSON")
-      # result_hash = JSON.parse(result.body)
-      # # @iata = []
-      # # @lat = []
-      # # @long = []
-
-      # result_hash['airports'].each do |result|
-      #   @iata = result["iata"]
-      #   @lat = result["x"]
-      #   @long = result["y"]
-
-        # binding.pry
-      # end
-
 
     # if @searched_airports.empty? || @searched_airports.details.empty?
     #   render :not_found

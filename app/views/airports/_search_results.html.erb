@@ -1,4 +1,4 @@
-<!-- Search partial via the Airports controller -->
+<!-- search results lister partial -->
 <ul>
   <% @searched_airports.each do |airport| %>
     <li id="airport_list"><%= link_to "#{airport.city} (#{airport.code})", airport %></li>
