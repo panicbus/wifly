@@ -10,7 +10,11 @@ module AirportsHelper
         @lat = result['lat']
         @long = result['long']
     end
+    # Airport.update_attributes(longitude: @long, latitude: @lat, airport_id: airport.id)
       # makes new instance of Location in db with these keys
-    Location.create(longitude: @long, latitude: @lat, airport_id: airport.id)
+    # Location.create(longitude: @long, latitude: @lat, airport_id: airport.id)
+    airport.update_attributes(longitude: @long, latitude: @lat)
+    airport.save
   end
 end
+

@@ -28,10 +28,10 @@ class AirportsController < ApplicationController
 
   def show
     @airport = Airport.find(params[:id])  #locates & sets the airport id w @airport
-    unless @airport.location   #if there is no location assc w/ @airport
+    unless @airport.latitude && @airport.longitude   #if there is no location assc w/ @airport
       create_location(@airport.code) #it creates one with its airport code
     end
-    @location = @airport.location  #or else assigns it to @locations
+    # @location = @airport.location  #or else assigns it to @locations
   end
 
   def edit
@@ -51,6 +51,5 @@ class AirportsController < ApplicationController
     # if @searched_airports.empty? || @searched_airports.details.empty?
     #   render :not_found
     # end
-
 
 end

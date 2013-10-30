@@ -1,5 +1,5 @@
 class Airport < ActiveRecord::Base
-  attr_accessible :city, :code, :country, :details
+  attr_accessible :city, :code, :country, :details, :latitude, :longitude
 
   has_one :location
 
@@ -16,3 +16,4 @@ class Airport < ActiveRecord::Base
   end
 
 end
+
