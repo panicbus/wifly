@@ -46,10 +46,13 @@ class AirportsController < ApplicationController
 
   def search
     @searched_airports = Airport.search(params[:search])
+
+    if @searched_airports.empty?
+    # if @searched_airports.empty? || @searched_airports.details.empty?
+      render :not_found
+    end
   end
 
-    # if @searched_airports.empty? || @searched_airports.details.empty?
-    #   render :not_found
-    # end
 
 end
+
