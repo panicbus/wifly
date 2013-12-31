@@ -4,6 +4,16 @@
  *= require_tree .
  */
 
+p {
+  font-size: 18px;
+}
+
+body {
+  font-family: futura;
+  background-image: url("/assets/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 .header img {
   float: left;
@@ -104,15 +114,7 @@ a:hover {
   border-radius: 5px;
 }
 
-p {
-  font-size: 18px;
-}
 
-body {
-  font-family: futura;
-  background-image: url(http://www.freefever.com/stock/vector-wallpapers-blue-wallpaper-clouds-devianart-nkspace-media.jpg);
-  background-size: cover;
-}
 
 .not_found_img {
   width: 565px;
