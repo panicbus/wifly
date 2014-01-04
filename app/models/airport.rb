@@ -10,15 +10,19 @@ class Airport < ActiveRecord::Base
   validates :details, presence: true
 
   def self.search(search)
-    search_condition = '%' + search + '%'
+    search_condition = '%' + search.upcase + '%'
     where('city LIKE ? OR code LIKE ? OR country LIKE ?',
      search_condition, search_condition, search_condition)
   end
 
   before_save do |a|
+    # if a.country == "usa"
+    #   a.country = a.country.upcase
+    # else
     a.city = a.city.downcase.titleize
     a.country = a.country.downcase.titleize
     a.code = a.code.upcase
+    # end
   end
 
   before_update do |b|

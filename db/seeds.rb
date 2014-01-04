@@ -46,4 +46,4 @@ Airport.create({:city => 'Bangkok', :country => 'Thailand', :code => 'BKK', :nam
 
 Airport.create({:city => 'Berlin', :country => 'Germany', :code => 'TXL', :name => 'Tegel Airport', :latitude => 52.553944, :longitude => 13.291722, :details => 'All passengers and visitors have direct access to the Internet via Wi-Fi. As soon as you open your browser at the airport you will be guided to the Wi-Fi portal homepage. From there you will then be able to select a provider and your preferred payment option.'})
 
-Airport.create({:city => 'Seattle', :country => 'USA', :code => 'SEA', :name => 'Seatac International Airport', :details => 'The Port of Seattle provides free WiFi throughout Sea-Tac Airport.'})
+Airport.create({:city => 'Seattle', :country => 'USA', :code => 'SEA', :name => 'Seatac International Airport', :latitude => 47.443839, :longitude => -122.301732, :details => 'The Port of Seattle provides free WiFi throughout Sea-Tac Airport.'})

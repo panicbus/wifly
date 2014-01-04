@@ -8,7 +8,7 @@
   <div><div>
    Input three letter airport code<br>
    Please note: you need to use the airport code, not city (i.e. CDG instead of PAR)<br>
-  <%= f.text_field :code, :value => (f.object.code ? f.object.code.upcase : ''), :placeholder => "3-letter code" %>&nbsp;<a href="http://www.webflyer.com/travel/milemarker/lookup.shtml" target="_blank">Find your code</a><p>
+  <%= f.text_field :code, :placeholder => "3-letter code" %>&nbsp;<a href="http://www.webflyer.com/travel/milemarker/lookup.shtml" target="_blank">Find your code</a><p>
   <div><div>
   Input details <br>
   <%= f.text_area :details, :placeholder => "Jot down the current airport wifi details", :cols => "65", :rows => "8"%><p>
