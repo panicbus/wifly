@@ -16,9 +16,10 @@ class AirportsController < ApplicationController
   end
 
   def create
+    # binding.pry
     new_airport = Airport.create(params[:airport])
       if new_airport.errors.empty?  #if there are no errors in the form
-        create_location(params[:airport][:code])  #calls the create_location method in airport helper
+        create_location(params[:airport][:code])  #calls the create_location method in airports_helper
         redirect_to airport_path(new_airport.id) # redirects to show method
       else
         flash[:notice] = new_airport.errors.full_messages  #otherwise prints error msgs
@@ -28,10 +29,10 @@ class AirportsController < ApplicationController
 
   def show
     @airport = Airport.find(params[:id])  #locates & sets the airport id w @airport
-    unless @airport.latitude && @airport.longitude   #if there is no location assc w/ @airport
-      create_location(@airport.code) #it creates one with its airport code
-    end
-    # @location = @airport.location  #or else assigns it to @locations
+    # unless @airport.name   #if there is no location (or now, name) assc w/ @airport
+    #   create_location(@airport.code) #it creates one with its airport code
+    # end
+
   end
 
   def edit

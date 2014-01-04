@@ -2,19 +2,26 @@ module AirportsHelper
   def create_location(airport_code)
         # encrypt key please!!
     airport = Airport.find_by_code(airport_code) #looks up db based on arpt code
-    result = Typhoeus.get("http://api.locu.com/v1_0/venue/search/?name=#{airport_code}&api_key=2bec4d817e50110d2223c53e5aea35a06503cf1a")
-      # parses the json from googlemaps API query
+    # code = Airport.code(airport_code)
+
+    result = Typhoeus.get("https://api.flightstats.com/flex/airports/rest/v1/json/iata/#{airport_code}?appId=ba60d138&appKey=6993097a4c89a337452651de4226afe9")
+    # binding.pry
     result_hash = JSON.parse(result.body)
-      #iterates through the array of hashes and grabs lat & lng
-    result_hash['objects'].each do |result|
-        @lat = result['lat']
-        @long = result['long']
+
+    result_hash['airports'].each do |airport|
+      @airport_name = airport['name']
+      @lat = airport['latitude']
+      @long = airport['longitude']
     end
-    # Airport.update_attributes(longitude: @long, latitude: @lat, airport_id: airport.id)
-      # makes new instance of Location in db with these keys
-    # Location.create(longitude: @long, latitude: @lat, airport_id: airport.id)
-    airport.update_attributes(longitude: @long, latitude: @lat)
+    # binding.pry
+
+    # Airport.update_attributes(name: @airport_name, airport_id: airport.id)
+    # Location.create(name: @airport_name, airport_id: airport.id)
+
+     # updates instance of Airport in db with these keys
+    airport.update_attributes(name: @airport_name, latitude: @lat, longitude: @long)
     airport.save
+
   end
 end
 

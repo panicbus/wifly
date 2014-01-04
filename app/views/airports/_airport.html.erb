@@ -21,4 +21,5 @@
 <div>
 
 </div>
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=545x200&sensor=false&zoom=9&markers=#{airport.latitude}%2C#{airport.longitude}" %>
+  <!-- put this key in env please -->
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=545x200&sensor=false&zoom=9&center=#{airport.name}&key=AIzaSyA2Zvu8Fh5CDowNb1X0-Flq7e5W0WGTd7E" %>

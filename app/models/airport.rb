@@ -1,5 +1,5 @@
 class Airport < ActiveRecord::Base
-  attr_accessible :city, :code, :country, :details, :latitude, :longitude
+  attr_accessible :city, :code, :country, :details, :latitude, :longitude, :name
 
   has_one :location
 
@@ -14,6 +14,19 @@ class Airport < ActiveRecord::Base
     where('city LIKE ? OR code LIKE ? OR country LIKE ?',
      search_condition, search_condition, search_condition)
   end
+
+  before_save do |a|
+    a.city = a.city.downcase.titleize
+    a.country = a.country.downcase.titleize
+    a.code = a.code.upcase
+  end
+
+  before_update do |b|
+    b.city = b.city.downcase.titleize
+    b.country = b.country.downcase.titleize
+    b.code = b.code.upcase
+  end
+
 
 end
 
