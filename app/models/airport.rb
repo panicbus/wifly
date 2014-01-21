@@ -9,8 +9,9 @@ class Airport < ActiveRecord::Base
   validates :country, presence: true
   validates :details, presence: true
 
+
   def self.search(search)
-    search_condition = '%' + search.upcase + '%'
+    search_condition = '%' + search + '%'
     where('city LIKE ? OR code LIKE ? OR country LIKE ?',
      search_condition, search_condition, search_condition)
   end
@@ -30,7 +31,6 @@ class Airport < ActiveRecord::Base
     b.country = b.country.downcase.titleize
     b.code = b.code.upcase
   end
-
 
 end
 
