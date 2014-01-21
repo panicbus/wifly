@@ -13,7 +13,7 @@ class Airport < ActiveRecord::Base
   def self.search(search)
     search_condition = '%' + search + '%'
     where('city LIKE ? OR code LIKE ? OR country LIKE ?',
-     search_condition.upcase, search_condition.upcase, search_condition.upcase)
+     search_condition.titleize, search_condition.upcase, search_condition.titleize)
   end
 
   before_save do |a|
