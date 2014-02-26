@@ -13,6 +13,7 @@ body {
   background-image: url("/assets/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
+  width: 100%;
 }
 
 .header img {
@@ -110,6 +111,14 @@ a:hover {
   border-radius: 5px;
 }
 
+#myModal > div {
+    margin-left: 25px;
+}
+
+/*corrects an movement left of the navbar when modal is clicked*/
+.modal-open .navbar {
+  width: 100%;
+}
 
 
 .not_found_img {
