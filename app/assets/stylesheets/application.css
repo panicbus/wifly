@@ -47,7 +47,8 @@ body {
   height: 102%;
   position: absolute;
   background-repeat: no-repeat;
-  background-position: cover;
+  background-position: center;
+  background-attachment: fixed;
   margin: -20px 0px 0px -26px;
 }
 
