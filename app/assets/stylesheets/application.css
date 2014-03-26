@@ -150,3 +150,15 @@ a:hover {
   margin: 15px 0 15px 10px;
   border-radius: 5px;
 }
+
+@media (max-width: 600px) {
+  #main_container {
+    width: 95%;
+    margin: 60px 0px 0px 3%;
+  }
+
+  #search_field {
+    width: 98%;
+    margin: 10px 0px 20px -3px;
+  }
+
