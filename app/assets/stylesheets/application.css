@@ -43,13 +43,13 @@ body {
 .mercator {
   opacity: 0.1;
   z-index: -1;
-  width: 101%;
+  width: 100%;
   height: 102%;
   position: absolute;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  margin: -20px 0px 0px -26px;
+  margin: -20px 0px 0px -20px;
 }
 
 #title {
