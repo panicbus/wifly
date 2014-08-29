@@ -13,7 +13,7 @@
   <div id="main_details">
     <!-- delivers the details -->
     <!-- safe_join sets the regex "\r\n" to be a line break in the details -->
-    <p><%= safe_join(airport.details.split("\r\n"), "<br />".html_safe) %></p>
+    <p><%= safe_join(airport.details.split("\r\n"), "<p>".html_safe) %></p>
   </div>
 
 <h4 style="font-size: 23px">If these details aren't right, you can

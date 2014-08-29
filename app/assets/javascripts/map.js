@@ -3,12 +3,26 @@
 // });
 
 
-// function initialize_map(){
-
-
+$(function initialize_map(){
+	
 	var	map = L.mapbox.map('map', 'panicbus.h9kn5bph'); //.setView([37.579, 2.285], 2);
+	
+	
+	// added 6/8/14
+	map.featureLayer.setGeoJSON(function(e){
+debugger
+		$.get("/airports/" + e.layer.feature)
+			.done(function(airports){
+				
+	    var feature = e.layer.feature;
 
-	// map.featureLayer.setGeoJSON(geoJson_features);
+	    var info = '<p class="site1_title"><b>' + feature.properties.title + '<b></p>' +
+	               '<p class="site1_desc">' + feature.properties.description + '</p>'
+			});
+	});
+
+	// end added 6/8/14
+
 
 		// map.featureLayer.eachLayer(function(layer){
 			
@@ -36,4 +50,6 @@
 	map.on('click',function(e){ });
 
 
-// }
+});
+
+

@@ -101,7 +101,12 @@ a:hover {
  text-decoration: none;
 }
 
-#main_details :last-child::first-line {
+/*#main_details :last-child::first-line {
+   font-weight: bold;
+   font-size: 18px;
+   color: #3914af;
+ }*/
+ #main_details p:first-of-type {
    font-weight: bold;
    font-size: 18px;
    color: #3914af;
